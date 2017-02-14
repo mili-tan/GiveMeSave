@@ -31,7 +31,10 @@ namespace GiveMeSave
         private void timerSave_Tick(object sender, EventArgs e)
         {
             backgroundWorkerSave.RunWorkerAsync();
-            notifyIcon1.ShowBalloonTip(1000, "已自动保存", DateTime.Now.ToString() + "已保存", ToolTipIcon.None);
+            if (checkBoxNoMsg.Checked == false)
+            {
+                notifyIcon1.ShowBalloonTip(1000, "已自动保存", DateTime.Now.ToString() + "已保存", ToolTipIcon.None);
+            }
         }
 
         private void buttonSaveStart_Click(object sender, EventArgs e)
@@ -44,7 +47,7 @@ namespace GiveMeSave
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
 
-            notifyIcon1.ShowBalloonTip(1000, "自动保存已开始", "\r每"+min+"分钟保存一次",ToolTipIcon.None);
+            notifyIcon1.ShowBalloonTip(2500, "自动保存已开始", "\r每"+min+"分钟保存一次",ToolTipIcon.None);
         }
 
         private void backgroundWorkerSave_DoWork(object sender, DoWorkEventArgs e)
@@ -77,7 +80,7 @@ namespace GiveMeSave
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
 
-            notifyIcon1.ShowBalloonTip(1000, "已停止", "自动保存已停止", ToolTipIcon.None);
+            notifyIcon1.ShowBalloonTip(2500, "已停止", "自动保存已停止", ToolTipIcon.None);
         }
 
         private void notifyIcon1_Click(object sender, EventArgs e)
