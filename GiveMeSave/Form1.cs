@@ -10,7 +10,7 @@ namespace GiveMeSave
     public partial class Form1 : Form
     {
         int min = 5;
-        Icon ico = new Icon("icon.ico");
+        Icon ico = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
         [DllImport("user32.dll", EntryPoint = "keybd_event", SetLastError = true)]
         public static extern void keyEvent(Keys KeyName, byte Scan, uint Flags, uint ExtraInfo);
@@ -23,6 +23,8 @@ namespace GiveMeSave
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             buttonSaveStop.Hide();
             labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
             timerSave.Interval = min * 60000;
@@ -33,7 +35,7 @@ namespace GiveMeSave
             backgroundWorkerSave.RunWorkerAsync();
             if (checkBoxNoMsg.Checked == false)
             {
-                notifyIcon1.ShowBalloonTip(1000, "已自动保存", DateTime.Now.ToString() + "已保存", ToolTipIcon.None);
+                notifyIcon1.ShowBalloonTip(1000, "已保存", DateTime.Now.ToString() + " 已自动保存", ToolTipIcon.None);
             }
         }
 
@@ -47,7 +49,7 @@ namespace GiveMeSave
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
 
-            notifyIcon1.ShowBalloonTip(2500, "自动保存已开始", "\r每"+min+"分钟保存一次",ToolTipIcon.None);
+            notifyIcon1.ShowBalloonTip(2500, "已开始", "将每"+min+"分钟保存一次",ToolTipIcon.None);
         }
 
         private void backgroundWorkerSave_DoWork(object sender, DoWorkEventArgs e)
