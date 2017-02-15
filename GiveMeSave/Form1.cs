@@ -105,5 +105,11 @@ namespace GiveMeSave
                 notifyIcon1.Visible = true;
             }
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.ExitThread();
+            Application.Exit();
+        }
     }
 }
