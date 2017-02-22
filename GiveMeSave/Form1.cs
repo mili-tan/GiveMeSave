@@ -32,9 +32,10 @@ namespace GiveMeSave
         private void Form1_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
-            mBtnStop.Hide();
+            mBtnStop.Enabled = false;
             labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
             timerSave.Interval = min * 60000;
+            materialProgressBar.Value = min;
         }
 
         private void timerSave_Tick(object sender, EventArgs e)
@@ -59,12 +60,12 @@ namespace GiveMeSave
             keyEvent(Keys.ControlKey, 0, KEYEVENTF_KEYUP, 0);
         }
 
-        private void trackBarTime_ValueChanged(object sender, EventArgs e)
-        {
-            min = trackBarTime.Value;
-            labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
-            timerSave.Interval = min * 60000;
-        }
+        //private void trackBarTime_ValueChanged(object sender, EventArgs e)
+        //{
+        //    min = trackBarTime.Value;
+        //    labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
+        //    timerSave.Interval = min * 60000;
+        //}
 
         private void notifyIcon1_Click(object sender, EventArgs e)
         {
@@ -95,9 +96,10 @@ namespace GiveMeSave
 
         private void mBtnStart_Click(object sender, EventArgs e)
         {
-            mBtnStart.Hide();
-            mBtnStop.Show();
-            trackBarTime.Enabled = false;
+            mBtnStart.Enabled = false;
+            mBtnStop.Enabled = true;
+            mBtnSub.Enabled = false;
+            mBtnAdd.Enabled = false;
             timerSave.Enabled = true;
 
             notifyIcon1.Icon = ico;
@@ -108,9 +110,11 @@ namespace GiveMeSave
 
         private void mBtnStop_Click(object sender, EventArgs e)
         {
-            mBtnStart.Show();
-            mBtnStop.Hide();
-            trackBarTime.Enabled = true;
+            mBtnStart.Enabled = true;
+            mBtnStop.Enabled = false;
+            mBtnSub.Enabled = true;
+            mBtnAdd.Enabled = true;
+
             timerSave.Enabled = false;
 
             notifyIcon1.Icon = ico;
@@ -118,5 +122,34 @@ namespace GiveMeSave
 
             notifyIcon1.ShowBalloonTip(2500, "已停止", "自动保存已停止", ToolTipIcon.None);
         }
+
+        private void mBtnSub_Click(object sender, EventArgs e)
+        {
+            if (min>5)
+            {
+                min = min - 5;
+            }
+            else if (min == 5)
+            {
+                min = 1;
+            }
+            materialProgressBar.Value = min;
+            labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
+        }
+
+        private void mBtnAdd_Click(object sender, EventArgs e)
+        {
+            if (min == 1)
+            {
+                min = 5;
+            }
+            else if (min < 100)
+            {
+                min = min + 5;
+            }
+            materialProgressBar.Value = min;
+            labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
+        }
+
     }
 }
