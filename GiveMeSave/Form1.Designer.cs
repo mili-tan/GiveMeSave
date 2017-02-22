@@ -167,6 +167,7 @@
             // 
             // mBtnAdd
             // 
+            this.mBtnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mBtnAdd.AutoSize = true;
             this.mBtnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mBtnAdd.Depth = 0;
