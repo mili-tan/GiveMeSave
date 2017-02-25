@@ -47,9 +47,10 @@
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Noto Sans CJK SC Regular", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelTime.Location = new System.Drawing.Point(4, 82);
+            this.labelTime.Location = new System.Drawing.Point(5, 102);
+            this.labelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(215, 30);
+            this.labelTime.Size = new System.Drawing.Size(270, 37);
             this.labelTime.TabIndex = 3;
             this.labelTime.Text = "每XX分钟自动保存一次";
             // 
@@ -74,12 +75,12 @@
             this.mBtnStart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mBtnStart.Depth = 0;
             this.mBtnStart.Icon = null;
-            this.mBtnStart.Location = new System.Drawing.Point(365, 207);
-            this.mBtnStart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mBtnStart.Location = new System.Drawing.Point(498, 269);
+            this.mBtnStart.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.mBtnStart.MouseState = MaterialSkin.MouseState.HOVER;
             this.mBtnStart.Name = "mBtnStart";
             this.mBtnStart.Primary = false;
-            this.mBtnStart.Size = new System.Drawing.Size(48, 36);
+            this.mBtnStart.Size = new System.Drawing.Size(56, 36);
             this.mBtnStart.TabIndex = 5;
             this.mBtnStart.Text = "开始";
             this.mBtnStart.UseVisualStyleBackColor = true;
@@ -91,10 +92,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(-2, 201);
+            this.materialDivider1.Location = new System.Drawing.Point(-3, 251);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(479, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(639, 1);
             this.materialDivider1.TabIndex = 6;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -104,13 +106,13 @@
             this.mCheckBoxNoMsg.AutoSize = true;
             this.mCheckBoxNoMsg.Depth = 0;
             this.mCheckBoxNoMsg.Font = new System.Drawing.Font("Noto Sans CJK SC Medium", 10F);
-            this.mCheckBoxNoMsg.Location = new System.Drawing.Point(9, 209);
+            this.mCheckBoxNoMsg.Location = new System.Drawing.Point(12, 269);
             this.mCheckBoxNoMsg.Margin = new System.Windows.Forms.Padding(0);
             this.mCheckBoxNoMsg.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mCheckBoxNoMsg.MouseState = MaterialSkin.MouseState.HOVER;
             this.mCheckBoxNoMsg.Name = "mCheckBoxNoMsg";
             this.mCheckBoxNoMsg.Ripple = true;
-            this.mCheckBoxNoMsg.Size = new System.Drawing.Size(112, 30);
+            this.mCheckBoxNoMsg.Size = new System.Drawing.Size(134, 30);
             this.mCheckBoxNoMsg.TabIndex = 7;
             this.mCheckBoxNoMsg.Text = "保存后不提示";
             this.mCheckBoxNoMsg.UseVisualStyleBackColor = true;
@@ -122,12 +124,12 @@
             this.mBtnStop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mBtnStop.Depth = 0;
             this.mBtnStop.Icon = null;
-            this.mBtnStop.Location = new System.Drawing.Point(417, 207);
-            this.mBtnStop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mBtnStop.Location = new System.Drawing.Point(564, 269);
+            this.mBtnStop.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.mBtnStop.MouseState = MaterialSkin.MouseState.HOVER;
             this.mBtnStop.Name = "mBtnStop";
             this.mBtnStop.Primary = false;
-            this.mBtnStop.Size = new System.Drawing.Size(48, 36);
+            this.mBtnStop.Size = new System.Drawing.Size(56, 36);
             this.mBtnStop.TabIndex = 8;
             this.mBtnStop.Text = "停止";
             this.mBtnStop.UseVisualStyleBackColor = true;
@@ -138,11 +140,12 @@
             this.materialProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialProgressBar.Depth = 0;
-            this.materialProgressBar.Location = new System.Drawing.Point(9, 129);
+            this.materialProgressBar.Location = new System.Drawing.Point(12, 161);
+            this.materialProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialProgressBar.Minimum = 1;
             this.materialProgressBar.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar.Name = "materialProgressBar";
-            this.materialProgressBar.Size = new System.Drawing.Size(456, 5);
+            this.materialProgressBar.Size = new System.Drawing.Size(608, 5);
             this.materialProgressBar.Step = 5;
             this.materialProgressBar.TabIndex = 9;
             this.materialProgressBar.Value = 1;
@@ -154,12 +157,12 @@
             this.mBtnSub.BackColor = System.Drawing.Color.Transparent;
             this.mBtnSub.Depth = 0;
             this.mBtnSub.Icon = global::GiveMeSave.Properties.Resources.minus;
-            this.mBtnSub.Location = new System.Drawing.Point(9, 149);
-            this.mBtnSub.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mBtnSub.Location = new System.Drawing.Point(12, 186);
+            this.mBtnSub.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.mBtnSub.MouseState = MaterialSkin.MouseState.HOVER;
             this.mBtnSub.Name = "mBtnSub";
             this.mBtnSub.Primary = false;
-            this.mBtnSub.Size = new System.Drawing.Size(120, 36);
+            this.mBtnSub.Size = new System.Drawing.Size(138, 36);
             this.mBtnSub.TabIndex = 10;
             this.mBtnSub.Text = "Subtract";
             this.mBtnSub.UseVisualStyleBackColor = false;
@@ -172,12 +175,12 @@
             this.mBtnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mBtnAdd.Depth = 0;
             this.mBtnAdd.Icon = global::GiveMeSave.Properties.Resources.plus;
-            this.mBtnAdd.Location = new System.Drawing.Point(388, 149);
-            this.mBtnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mBtnAdd.Location = new System.Drawing.Point(534, 186);
+            this.mBtnAdd.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.mBtnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.mBtnAdd.Name = "mBtnAdd";
             this.mBtnAdd.Primary = false;
-            this.mBtnAdd.Size = new System.Drawing.Size(77, 36);
+            this.mBtnAdd.Size = new System.Drawing.Size(85, 36);
             this.mBtnAdd.TabIndex = 11;
             this.mBtnAdd.Text = "Add";
             this.mBtnAdd.UseVisualStyleBackColor = true;
@@ -185,9 +188,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 250);
+            this.ClientSize = new System.Drawing.Size(633, 312);
             this.Controls.Add(this.mBtnAdd);
             this.Controls.Add(this.mBtnSub);
             this.Controls.Add(this.materialProgressBar);
@@ -197,6 +200,7 @@
             this.Controls.Add(this.mBtnStart);
             this.Controls.Add(this.labelTime);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "给我存";
