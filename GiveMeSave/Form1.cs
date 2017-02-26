@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Threading;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using MaterialSkin.Animations;
 
 namespace GiveMeSave
 {
@@ -14,7 +13,6 @@ namespace GiveMeSave
     {
         int min = 5;
         Icon ico = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-
         [DllImport("user32.dll", EntryPoint = "keybd_event", SetLastError = true)]
         public static extern void keyEvent(Keys KeyName, byte Scan, uint Flags, uint ExtraInfo);
         public const int KEYEVENTF_KEYUP = 2;
@@ -26,7 +24,7 @@ namespace GiveMeSave
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Teal700, Primary.Teal800, Primary.Teal500, Accent.LightBlue700, TextShade.WHITE);
         }
 
         private void Form1_Load(object sender, EventArgs e)

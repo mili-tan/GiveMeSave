@@ -93,7 +93,7 @@
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Location = new System.Drawing.Point(-3, 251);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(4);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(639, 1);
@@ -141,7 +141,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialProgressBar.Depth = 0;
             this.materialProgressBar.Location = new System.Drawing.Point(12, 161);
-            this.materialProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialProgressBar.Margin = new System.Windows.Forms.Padding(4);
             this.materialProgressBar.Minimum = 1;
             this.materialProgressBar.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar.Name = "materialProgressBar";
@@ -200,7 +200,7 @@
             this.Controls.Add(this.mBtnStart);
             this.Controls.Add(this.labelTime);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "给我存";
