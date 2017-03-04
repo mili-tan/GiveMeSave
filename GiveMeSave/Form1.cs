@@ -102,6 +102,7 @@ namespace GiveMeSave
 
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
+            timerSave.Interval = min * 60000;
 
             notifyIcon1.ShowBalloonTip(2500, "已开始", "将每" + min + "分钟保存一次", ToolTipIcon.None);
         }
@@ -123,7 +124,7 @@ namespace GiveMeSave
 
         private void mBtnSub_Click(object sender, EventArgs e)
         {
-            if (min>5)
+            if (min > 5)
             {
                 min = min - 5;
             }
