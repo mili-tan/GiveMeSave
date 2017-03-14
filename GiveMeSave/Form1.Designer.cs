@@ -34,6 +34,13 @@
             this.timerSave = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorkerSave = new System.ComponentModel.BackgroundWorker();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuItemShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mBtnStart = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.mCheckBoxNoMsg = new MaterialSkin.Controls.MaterialCheckBox();
@@ -41,6 +48,7 @@
             this.materialProgressBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.mBtnSub = new MaterialSkin.Controls.MaterialFlatButton();
             this.mBtnAdd = new MaterialSkin.Controls.MaterialFlatButton();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTime
@@ -64,9 +72,62 @@
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip;
             this.notifyIcon1.Text = "给我存 - 定时自动保存工具";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.contextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemShow,
+            this.menuItemStop,
+            this.toolStripSeparator1,
+            this.menuItemAbout,
+            this.toolStripSeparator2,
+            this.menuItemExit});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(205, 148);
+            // 
+            // menuItemShow
+            // 
+            this.menuItemShow.Name = "menuItemShow";
+            this.menuItemShow.Size = new System.Drawing.Size(204, 26);
+            this.menuItemShow.Text = "显示GiveMeSave";
+            this.menuItemShow.Click += new System.EventHandler(this.menuItemShow_Click);
+            // 
+            // menuItemStop
+            // 
+            this.menuItemStop.Name = "menuItemStop";
+            this.menuItemStop.Size = new System.Drawing.Size(204, 26);
+            this.menuItemStop.Text = "停止自动保存";
+            this.menuItemStop.Click += new System.EventHandler(this.menuItemStop_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
+            // 
+            // menuItemAbout
+            // 
+            this.menuItemAbout.Name = "menuItemAbout";
+            this.menuItemAbout.Size = new System.Drawing.Size(204, 26);
+            this.menuItemAbout.Text = "关于";
+            this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            // 
+            // menuItemExit
+            // 
+            this.menuItemExit.Name = "menuItemExit";
+            this.menuItemExit.Size = new System.Drawing.Size(204, 26);
+            this.menuItemExit.Text = "退出";
+            this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
             // 
             // mBtnStart
             // 
@@ -207,6 +268,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +286,13 @@
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar;
         private MaterialSkin.Controls.MaterialFlatButton mBtnSub;
         private MaterialSkin.Controls.MaterialFlatButton mBtnAdd;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem menuItemShow;
+        private System.Windows.Forms.ToolStripMenuItem menuItemStop;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem menuItemAbout;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem menuItemExit;
     }
 }
 

@@ -65,17 +65,6 @@ namespace GiveMeSave
         //    timerSave.Interval = min * 60000;
         //}
 
-        private void notifyIcon1_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                WindowState = FormWindowState.Normal;
-                Activate();
-                ShowInTaskbar = true;
-                notifyIcon1.Visible = false;
-            }
-        }
-
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
@@ -150,5 +139,52 @@ namespace GiveMeSave
             labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
         }
 
+        private void menuItemStop_Click(object sender, EventArgs e)
+        {
+            mBtnStart.Enabled = true;
+            mBtnStop.Enabled = false;
+            mBtnSub.Enabled = true;
+            mBtnAdd.Enabled = true;
+
+            timerSave.Enabled = false;
+
+            notifyIcon1.Icon = ico;
+            notifyIcon1.Visible = true;
+
+            notifyIcon1.ShowBalloonTip(2500, "已停止", "自动保存已停止", ToolTipIcon.None);
+        }
+
+        private void menuItemShow_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+                Activate();
+                ShowInTaskbar = true;
+                notifyIcon1.Visible = false;
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+                Activate();
+                ShowInTaskbar = true;
+                notifyIcon1.Visible = false;
+            }
+        }
+
+        private void menuItemExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Application.ExitThread();
+        }
+
+        private void menuItemAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("mGivemeSave 1.0.5\n\rCopyright © 2014~2017 Mili Tan. All Rights Reserved. \n\r感谢使用！");
+        }
     }
 }
