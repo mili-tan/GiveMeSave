@@ -89,6 +89,8 @@ namespace GiveMeSave
             mBtnAdd.Enabled = false;
             timerSave.Enabled = true;
 
+            menuItemStop.Enabled = true;
+
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
             timerSave.Interval = min * 60000;
@@ -104,6 +106,8 @@ namespace GiveMeSave
             mBtnAdd.Enabled = true;
 
             timerSave.Enabled = false;
+
+            menuItemStop.Enabled = false;
 
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
@@ -141,17 +145,7 @@ namespace GiveMeSave
 
         private void menuItemStop_Click(object sender, EventArgs e)
         {
-            mBtnStart.Enabled = true;
-            mBtnStop.Enabled = false;
-            mBtnSub.Enabled = true;
-            mBtnAdd.Enabled = true;
-
-            timerSave.Enabled = false;
-
-            notifyIcon1.Icon = ico;
-            notifyIcon1.Visible = true;
-
-            notifyIcon1.ShowBalloonTip(2500, "已停止", "自动保存已停止", ToolTipIcon.None);
+            mBtnStop_Click(null,null);
         }
 
         private void menuItemShow_Click(object sender, EventArgs e)
