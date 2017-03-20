@@ -88,7 +88,7 @@
             this.toolStripSeparator2,
             this.menuItemExit});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(172, 104);
+            this.contextMenuStrip.Size = new System.Drawing.Size(172, 126);
             // 
             // menuItemShow
             // 
