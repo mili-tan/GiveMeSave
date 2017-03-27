@@ -58,13 +58,6 @@ namespace GiveMeSave
             keyEvent(Keys.ControlKey, 0, KEYEVENTF_KEYUP, 0);
         }
 
-        //private void trackBarTime_ValueChanged(object sender, EventArgs e)
-        //{
-        //    min = trackBarTime.Value;
-        //    labelTime.Text = "每" + min.ToString() + "分钟自动保存一次";
-        //    timerSave.Interval = min * 60000;
-        //}
-
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
