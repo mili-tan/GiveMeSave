@@ -24,7 +24,7 @@ namespace GiveMeSave
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Teal700, Primary.Teal800, Primary.Teal500, Accent.LightBlue700, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue600, Primary.LightBlue700, Primary.LightBlue500, Accent.LightBlue700, TextShade.WHITE);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -82,6 +82,8 @@ namespace GiveMeSave
             mBtnAdd.Enabled = false;
             timerSave.Enabled = true;
 
+            menuItemStop.Enabled = true;
+
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
             timerSave.Interval = min * 60000;
@@ -97,6 +99,8 @@ namespace GiveMeSave
             mBtnAdd.Enabled = true;
 
             timerSave.Enabled = false;
+
+            menuItemStop.Enabled = false;
 
             notifyIcon1.Icon = ico;
             notifyIcon1.Visible = true;
@@ -134,28 +138,12 @@ namespace GiveMeSave
 
         private void menuItemStop_Click(object sender, EventArgs e)
         {
-            mBtnStart.Enabled = true;
-            mBtnStop.Enabled = false;
-            mBtnSub.Enabled = true;
-            mBtnAdd.Enabled = true;
-
-            timerSave.Enabled = false;
-
-            notifyIcon1.Icon = ico;
-            notifyIcon1.Visible = true;
-
-            notifyIcon1.ShowBalloonTip(2500, "已停止", "自动保存已停止", ToolTipIcon.None);
+            mBtnStop_Click(null, null);
         }
 
         private void menuItemShow_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                WindowState = FormWindowState.Normal;
-                Activate();
-                ShowInTaskbar = true;
-                notifyIcon1.Visible = false;
-            }
+            notifyIcon1_MouseDoubleClick(null, null);
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
